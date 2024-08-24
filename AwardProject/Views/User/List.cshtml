@@ -8,9 +8,9 @@
 <h2>Kullanıcı Listesi</h2>
 
 <div class="button-container">
-    <a role="button" aria-disabled="true" class="btn btn-success" href="@Url.Action("Add", "User")">Yeni Ekle</a>
+    <a role="button" aria-disabled="true" class="btn btn-primary" href="@Url.Action("Add", "User")">Ekle</a>
 </div>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -33,12 +33,13 @@
                     <td>@user.Surname</td>
                     <td>@user.Email</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="@Url.Action("Edit", "User", new { id = user.Id })" role="button" aria-disabled="true">
-                            Güncelle
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="@Url.Action("Delete", "User", new { id = user.Id })" role="button" aria-disabled="true">
-                            Sil
-                        </a>
+                        <div class="action-buttons">
+                            <a class="btn btn btn-outline-success btn " href="@Url.Action("Edit", "User", new { id = user.Id })" role="button" aria-disabled="true">Güncelle
+                            </a>
+                            <a class="btn btn-outline-danger btn" href="@Url.Action("Delete", "User", new { id = user.Id })" role="button" aria-disabled="true">Sil
+                            </a>
+                        </div>
+                        
                     </td>
                 </tr>
             }

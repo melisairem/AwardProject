@@ -1,0 +1,52 @@
+﻿@using AwardProject.Models
+@model List<Award>
+
+@{
+    ViewData["Title"] = "Başarımlar Listesi";
+}
+
+<h2>Başarımlar Listesi</h2>
+
+<div class="button-container">
+    <a role="button" aria-disabled="true" class="btn btn-primary" href="@Url.Action("Add", "Award")">Ekle</a>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başarım</th>
+            <th scope="col">İkon</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int counter = 0;
+            foreach (Award award in Model)
+            {
+                counter++;
+
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@award.Name</td>
+                    <td>@award.BorderColor</td>
+                    <td>@award.Category</td>
+                    <td>@award.CategoryId</td>
+                    <td>@award.FontColor</td>
+                    <td>@award.FontClass</td>
+                    <td>@award.Id</td>
+                    <td>
+                        <a class="btn btn btn-outline-success btn-sm" href="@Url.Action("Edit", "Award", new { id = award.Id })" role="button" aria-disabled="true">Güncelle
+                        </a>
+                        <a class="btn btn-outline-danger btn-sm" href="@Url.Action("Delete", "Award", new { id = award.Id })" role="button" aria-disabled="true">Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section styles {
+    <link rel="stylesheet" href="~/css/list-style.css" asp-append-version="true" />
+}

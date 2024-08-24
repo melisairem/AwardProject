@@ -1,23 +1,22 @@
-﻿using AwardProject.Models.Base;
-using AwardProject.Models;
+﻿using AwardProject.Models;
+using AwardProject.Models.Base;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AwardWeb.Controllers
+namespace AwardProject.Controllers
 {
-    public class UserController : Controller
+    public class AwardController : Controller
     {
         private readonly ModelContext _context;
 
-        public UserController(ModelContext context)
+        public AwardController(ModelContext context)
         {
             _context = context;
         }
 
-        //[Route("user-list")]
         public IActionResult List()
         {
-            List<User> users = _context.User.ToList();
-            return View(users);
+            List<Award> awards = _context.Award.ToList();
+            return View(awards);
         }
 
         [HttpGet]
@@ -28,34 +27,34 @@ namespace AwardWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(User user)
+        public IActionResult Add(Award award)
         {
-            _context.User.Add(user);
+            _context.Award.Add(award);
             _context.SaveChanges();
             return RedirectToAction("List");
         }
 
         public IActionResult Edit(int id)
         {
-            User user = _context.User.Find(id)!;
-            return View(user);
+            Award award = _context.Award.Find(id)!;
+            return View(award);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(User user)
+        public IActionResult Edit(Award award)
         {
-            _context.User.Update(user);
+            _context.Award.Update(award);
             _context.SaveChanges();
             return RedirectToAction("List");
         }
 
         public IActionResult Delete(int id)
         {
-            User? user = _context.User.Find(id);
-            if (user != null)
+            Award? award = _context.Award.Find(id);
+            if (award != null)
             {
-                _context.User.Remove(user);
+                _context.Award.Remove(award);
                 _context.SaveChanges();
             }
             return RedirectToAction("List");

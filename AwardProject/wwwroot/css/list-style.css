@@ -5,11 +5,11 @@
 }
 
 /* Yeni Ekle Butonu */
-.btn-success {
-    padding: 10px 20px;
+.btn-primary {
+    padding: 10px 40px;
     font-size: 1rem;
-    background-color: #43A2E1;
-    border-color: #43A2E1;
+    background-color: #03346E;
+    border-color: #03346E;
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s ease-in-out;
@@ -17,17 +17,18 @@
     color: #fff; /* Yazý rengi beyaz */
 }
 
-    .btn-success:hover {
-        background-color: #3691cc; /* Ana renkten biraz daha koyu */
-        border-color: #3691cc;
-        color: #fff; /* Yazý rengi beyaz */
-    }
+.btn-success:hover {
+    background-color: #3691cc; /* Ana renkten biraz daha koyu */
+    border-color: #3691cc;
+    color: #fff; /* Yazý rengi beyaz */
+}
 
 /* Tablo */
 .table {
     width: 100%;
     margin: 0 auto;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    /*background-color: #758694;*/
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
@@ -39,8 +40,10 @@
         padding: 15px;
         text-align: left;
         font-size: 1rem;
-        background-color: #312F2F; /* Arka plan rengi burada belirleniyor */
+        /*background-color: #312F2F;*/ /* Arka plan rengi burada belirleniyor */
+        background-color: #808080; 
         color: #ecf0f1; /* Yazý rengi */
+        margin-top: 30px /*bak*/
     }
 
     /* Tablo Gövdesi */
@@ -57,8 +60,18 @@
         font-size: 0.95rem;
     }
 
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Butonlarý yatay olarak ortalar */
+    align-items: center; /* Butonlarý dikey olarak ortalar */
+}
+
+    .action-buttons a {
+        margin: 0 5px; /* Her bir buton arasýnda 5px boþluk býrakýr */
+    }
+
 /* Ýþlem Butonlarý */
-.btn-warning {
+.btn-success {
     background-color: #33D197;
     border-color: #33D197;
     color: #fff;
@@ -69,10 +82,11 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-    .btn-warning:hover {
+    .btn-success:hover {
         background-color: #2fb586; /* Ana renkten biraz daha koyu */
         border-color: #2fb586;
         color: #fff; /* Yazý rengi beyaz */
+        margin-right: 50px;
     }
 
 .btn-danger {

@@ -14,10 +14,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<User> users = _context.User.ToList();
-        //_context.User.Add(new User() { Name = "Test", Email = "", Surname = "Test3", Password = "AAA" });
-        //_context.SaveChanges();
-        return View(users);
+        return View();
     }
 
 }
