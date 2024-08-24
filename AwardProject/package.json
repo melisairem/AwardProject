@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.6.0",
+    "animate.css": "4.1.1",
+    "bootstrap": "5.3.3",
+    "jquery": "3.7.1",
+    "jquery-validation": "1.21.0",
+    "jquery-validation-unobtrusive": "4.0.0"
+  },
+  "name": "awardproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\"&& exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
