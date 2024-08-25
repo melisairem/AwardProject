@@ -67,8 +67,8 @@ button.btn, a.btn {
 
 /* Geri Dön Button */
 button.btn-secondary, a.btn-secondary {
-    background-color: #312F2F;
-    border-color: #312F2F;
+    background-color: #6c757d;
+    border-color: #6c757d;
     color: #fff;
 }
 
@@ -79,8 +79,8 @@ button.btn-secondary, a.btn-secondary {
 
 /* Kaydet (Güncelle) Button */
 button.btn-primary {
-    background-color: #43A2E1; /* Güncelle butonunu yeþil yap */
-    border-color: #43A2E1;
+    background-color: #0081a7; /* Güncelle butonunu yeþil yap */
+    border-color: #0081a7;
     color: #fff;
 }
 

@@ -22,6 +22,8 @@ namespace AwardProject.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            List<Category> categories = _context.Category.ToList();
+            ViewBag.Categories = categories;
             return View();
         }
 
@@ -37,6 +39,8 @@ namespace AwardProject.Controllers
         public IActionResult Edit(int id)
         {
             Award award = _context.Award.Find(id)!;
+            List<Category> categories = _context.Category.ToList();
+            ViewBag.Categories = categories;
             return View(award);
         }
 

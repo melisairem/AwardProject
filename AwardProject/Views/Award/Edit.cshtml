@@ -1,8 +1,10 @@
-﻿@model AwardProject.Models.Award
-
+﻿@using AwardProject.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model AwardProject.Models.Award
 
 @{
     ViewData["Title"] = "Başarım Kaydı Güncelleme";
+    List<Category> categories = ViewBag.Categories;
 }
 
 <h2>Başarım Kaydı Güncelle</h2>
@@ -17,7 +19,14 @@
     </div>
     <div class="form-group">
         <label asp-for="CategoryId"></label>
-        <input asp-for="CategoryId" class="form-control" />
+        <select class="form-select" asp-for="CategoryId" aria-label="Lütfen Seçiniz">
+            @{
+                foreach (Category category in categories)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            }
+        </select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -35,7 +44,7 @@
         <input asp-for="FontClass" class="form-control" />
         <span asp-validation-for="FontClass" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <button type="submit" class="btn btn-primary background-color: #03346E">Kaydet</button>
     <a href="@Url.Action("List","Award")" class="btn btn-secondary" role="button" aria-disabled="true">Geri Dön</a>
 </form>
 

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AwardProject.Models
 {
@@ -6,8 +8,12 @@ namespace AwardProject.Models
     {
         public int Id { get; set; }
 
+        [DisplayName("Adı")]
+        [Required]
         public string Name { get; set; }
 
+        [DisplayName("Soyadı")]
+        [Required]
         public string Surname { get; set; }
 
         [NotMapped]
@@ -19,8 +25,17 @@ namespace AwardProject.Models
             }
         }
 
+        [DisplayName("E-posta")]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
+        [DisplayName("Şifre")]
+        [Required]
         public string Password { get; set; }
+
+        public DateTime CreateAt { get; set; }
+
+        public DateTime UpdateDate { get; set; }
     }
 }

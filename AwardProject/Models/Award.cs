@@ -24,5 +24,9 @@ namespace AwardProject.Models
         public string FontClass { get; set; }
 
         public Category Category { get; set; }
+
+        public DateTime CreateAt { get; set; }
+
+        public DateTime UpdateDate { get; set; }
     }
 }

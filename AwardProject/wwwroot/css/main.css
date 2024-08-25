@@ -9,13 +9,15 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px; /* Yuvarlaðýn geniþliði */
-    height: 40px; /* Yuvarlaðýn yüksekliði */
-    border: 5px solid rgba(0, 0, 0, 0.2); /* 2px geniþliðinde yarý þeffaf çerçeve */
-    border-radius: 50%; /* Yuvarlak çerçeve */
-    background-color: transparent; /* Arka plan rengi */
+    border: 3px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin-left: 10px;
+    /* margin-right: auto; */
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
 }
 
     .icon-circle i {
-        font-size: 20px; /* Ýkonun boyutu */
+        font-size: 20px;
     }

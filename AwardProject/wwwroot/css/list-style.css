@@ -4,18 +4,26 @@
     margin-bottom: 10px;
 }
 
+
 /* Yeni Ekle Butonu */
 .btn-primary {
     padding: 10px 40px;
     font-size: 1rem;
-    background-color: #03346E;
-    border-color: #03346E;
+    /*background-color: #03346E; */ /* lacivert  */
+    /*background-color: #344e41;*/ /* koyu yeþil  */
+    background-color: #0077B6;
+    border-color: #0077B6;
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s ease-in-out;
     display: inline-block;
     color: #fff; /* Yazý rengi beyaz */
 }
+
+    .btn-primary:hover {
+        background-color: #005f8a; /* Daha koyu bir mavi */
+    }
+
 
 .btn-success:hover {
     background-color: #3691cc; /* Ana renkten biraz daha koyu */
@@ -27,8 +35,6 @@
 .table {
     width: 100%;
     margin: 0 auto;
-    /*background-color: #ffffff;*/
-    /*background-color: #758694;*/
     border-collapse: collapse;
     border-radius: 8px;
     overflow: hidden;
@@ -41,9 +47,12 @@
         text-align: left;
         font-size: 1rem;
         /*background-color: #312F2F;*/ /* Arka plan rengi burada belirleniyor */
-        background-color: #808080; 
+        /*background-color: #808080;*/
+        /*background-color: #003049;*/
+        background-color: #495057; /* gri */
+        /* background-color: #588157; */ /* yeþil  */
         color: #ecf0f1; /* Yazý rengi */
-        margin-top: 30px /*bak*/
+        margin-top: 10px
     }
 
     /* Tablo Gövdesi */
@@ -67,6 +76,16 @@
 }
 
     .action-buttons a {
+        margin: 0 5px; /* Her bir buton arasýnda 5px boþluk býrakýr */
+    }
+
+.melisa {
+    display: flex;
+    justify-content: center; /* Butonlarý yatay olarak ortalar */
+    align-items: center; /* Butonlarý dikey olarak ortalar */
+}
+
+    .melisa a {
         margin: 0 5px; /* Her bir buton arasýnda 5px boþluk býrakýr */
     }
 
