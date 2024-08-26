@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace AwardProject.Models.Base
+namespace AwardProjectEntity.Base
 {
     public class ModelContext : DbContext
     {
@@ -11,8 +11,11 @@ namespace AwardProject.Models.Base
         }
 
         public DbSet<User> User { get; set; }
+
         public DbSet<Award> Award { get; set; }
+
         public DbSet<Category> Category { get; set; }
+
         public DbSet<UserAward> UserAward { get; set; }
     }
 }

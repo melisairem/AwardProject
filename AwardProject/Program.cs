@@ -1,5 +1,5 @@
 using System.Configuration;
-using AwardProject.Models.Base;
+using AwardProjectEntity.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 

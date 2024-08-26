@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AwardProject.Models.Base
+namespace AwardProjectEntity.Base
 {
     public abstract class BaseEntity
     { 
@@ -11,7 +11,7 @@ namespace AwardProject.Models.Base
         [DisplayName("Oluşturma Tarihi")]
         public DateTime AddDate { get; set; }
 
-        [DisplayName("Güncelleme  Tarihi")]
+        [DisplayName("Güncelleme Tarihi")]
         public DateTime? UpdateDate { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using AwardProject.Models;
-using AwardProject.Models.Base;
+using AwardProjectEntity.Base;
 
 public class HomeController : Controller
 {

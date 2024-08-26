@@ -1,8 +1,8 @@
-﻿using AwardProject.Models.Base;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using AwardProjectEntity.Base;
 
-namespace AwardProject.Models
+namespace AwardProjectEntity
 {
     public class UserAward : BaseEntity
     {

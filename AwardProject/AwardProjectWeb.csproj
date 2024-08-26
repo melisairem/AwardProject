@@ -3306,4 +3306,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AwardProjectEntity\AwardProjectEntity.csproj" />
+  </ItemGroup>
+
 </Project>

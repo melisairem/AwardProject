@@ -1,5 +1,5 @@
-﻿using AwardProject.Models;
-using AwardProject.Models.Base;
+﻿using AwardProjectEntity;
+using AwardProjectEntity.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AwardProject.Controllers

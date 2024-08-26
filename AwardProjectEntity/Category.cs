@@ -1,6 +1,6 @@
-﻿using AwardProject.Models.Base;
+﻿using AwardProjectEntity.Base;
 
-namespace AwardProject.Models
+namespace AwardProjectEntity
 {
     public class Category : BaseEntity
     {
