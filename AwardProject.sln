@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityLayer", "EntityLayer"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwardProjectEntity", "AwardProjectEntity\AwardProjectEntity.csproj", "{B6F4FEE1-C21C-4179-AFC1-39C70D9C5876}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cross-Cutting", "Cross-Cutting", "{C4D496DC-3218-4910-B3B0-0AD856DC034C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{08155BFF-6040-41E9-B524-0C401983086F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{B6F4FEE1-C21C-4179-AFC1-39C70D9C5876}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F4FEE1-C21C-4179-AFC1-39C70D9C5876}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F4FEE1-C21C-4179-AFC1-39C70D9C5876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08155BFF-6040-41E9-B524-0C401983086F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08155BFF-6040-41E9-B524-0C401983086F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08155BFF-6040-41E9-B524-0C401983086F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08155BFF-6040-41E9-B524-0C401983086F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,7 @@ Global
 		{CE913239-563A-49A4-A05A-29534993ED0F} = {02AE8B9C-1A4E-4F48-92B7-494B3C729A20}
 		{12B6A445-96B5-4D64-B68E-DC48825444CE} = {02AE8B9C-1A4E-4F48-92B7-494B3C729A20}
 		{B6F4FEE1-C21C-4179-AFC1-39C70D9C5876} = {E85BEE46-BE97-4C5A-A92A-79713568E3B4}
+		{08155BFF-6040-41E9-B524-0C401983086F} = {C4D496DC-3218-4910-B3B0-0AD856DC034C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57B6F4D1-A50A-4423-A0DF-2C3F86574153}
