@@ -19,7 +19,6 @@
             <th scope="col">İkon</th>
             <th scope="col">İkon Rengi</th>
             <th scope="col">Çerçeve Rengi</th>
-            
             <th scope="col">İşlemler</th>
             
             
@@ -37,13 +36,12 @@
                     <td>@award.Name</td>
                     <td>@award.CategoryId</td>
                     <td>
-                        <div class="icon-circle" style="border-color:@award.BorderColor">
+                        <div class="icon-circle-" style="border-color:@award.BorderColor">
                             <i class="@award.FontClass" style="color:@(award.FontColor)"></i>
                         </div>
                     </td>
                     <td>@award.FontColor</td>
                     <td>@award.BorderColor</td>
-                    
                     <td>
                         <div class="melisa">
                             <a class="btn btn btn-outline-success" href="@Url.Action("Edit", "Award", new { id = award.Id })" role="button" aria-disabled="true">

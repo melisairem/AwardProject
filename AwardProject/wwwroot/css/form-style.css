@@ -28,7 +28,7 @@ form {
         font-size: 1rem;
         padding: 10px;
         border-radius: 5px;
-        background-color: #ecf0f1;
+        background-color: #ecf0f1; /* burasý kutuucklarýn içinin rengini getiriyor */
         border: 1px solid #ced4da;
         color: #4a6373; /* Yazý rengini biraz daha açýk hale getirdik */
         transition: border-color 0.3s ease-in-out;
@@ -42,12 +42,33 @@ form {
             color: #3a4d5c; /* Focus durumunda yazý rengini biraz daha koyu hale getirdik */
         }
 
-/* Validation Messages */
-.text-danger {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    color: #e74c3c;
-}
+    /* Select Kutularý için Genel Stil */ 
+    .form-group .form-select {
+        height: 45px;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #ecf0f1; /* Kutucuklarýn arka plan rengini ayarlar */
+        border: 1px solid #ced4da;
+        color: #4a6373; /* Yazý rengini ayarlar */
+        transition: border-color 0.3s ease-in-out;
+        width: 100%; /* Geniþlik ayarý */
+    }
+
+        .form-group .form-select:focus {
+            border-color: #3498db; /* Fokus durumunda çerçeve rengi */
+            outline: none;
+            box-shadow: none;
+            color: #3a4d5c; /* Focus durumunda yazý rengini biraz daha koyu hale getirir */
+        }
+
+    
+    /* Validation Messages */
+    .text-danger {
+        font-size: 0.9rem;
+        margin-top: 5px;
+        color: #e74c3c;
+    }
 
 /* Form Buttons Container */
 .form-buttons {

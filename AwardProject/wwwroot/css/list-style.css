@@ -4,7 +4,6 @@
     margin-bottom: 10px;
 }
 
-
 /* Yeni Ekle Butonu */
 .btn-primary {
     padding: 10px 40px;
@@ -23,7 +22,7 @@
     .btn-primary:hover {
         background-color: #005f8a; /* Daha koyu bir mavi */
     }
-
+}
 
 .btn-success:hover {
     background-color: #3691cc; /* Ana renkten biraz daha koyu */

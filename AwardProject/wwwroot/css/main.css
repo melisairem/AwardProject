@@ -1,9 +1,25 @@
-h2 {
+﻿h2 {
     margin-bottom: 30px;
     color: #2c3e50;
     font-size: 2rem;
     font-weight: 600;
 }
+
+.icon-circle- {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+}
+
+    .icon-circle- i {
+        font-size: 20px;
+    }
 
 .icon-circle {
     display: flex;
@@ -11,8 +27,6 @@ h2 {
     align-items: center;
     border: 3px solid rgba(0,0,0,0.2);
     border-radius: 50%;
-    margin-left: 10px;
-    /* margin-right: auto; */
     width: 30px;
     height: 30px;
     background-color: transparent;
