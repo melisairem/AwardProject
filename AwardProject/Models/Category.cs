@@ -1,10 +1,9 @@
-﻿using NuGet.Protocol.Core.Types;
+﻿using AwardProject.Models.Base;
 
 namespace AwardProject.Models
 {
-    public class Category
+    public class Category : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

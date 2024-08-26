@@ -1,12 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using AwardProject.Models.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AwardProject.Models
 {
-    public class UserAward
+    public class UserAward : BaseEntity
     {
-        public int Id { get; set; }
-
         [ForeignKey("User")]
         public int UserId { get; set; }
 
@@ -15,6 +13,5 @@ namespace AwardProject.Models
 
         public User User { get; set; }
         public Award Award { get; set; }
-
     }
 }

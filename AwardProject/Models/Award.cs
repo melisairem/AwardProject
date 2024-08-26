@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AwardProject.Models.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AwardProject.Models
 {
-    public class Award
+    public class Award : BaseEntity
     {
-        public int Id { get; set; }
-
         [Display(Name = "Başarım Adı")]
         public string Name { get; set; }
 
@@ -24,9 +23,5 @@ namespace AwardProject.Models
         public string FontClass { get; set; }
 
         public Category Category { get; set; }
-
-        public DateTime CreateAt { get; set; }
-
-        public DateTime UpdateDate { get; set; }
     }
 }
