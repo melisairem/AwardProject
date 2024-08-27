@@ -1,44 +1,48 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
+using Microsoft.IdentityModel.Tokens;
+using Utility.ConfigurationFile;
 
 namespace AwardProjectEntity.Base
 {
     public class ModelContext : DbContext
     {
-        private static ModelContext _instance;
-        private static readonly object _lock = new object();
-
-        public ModelContext(DbContextOptions<ModelContext> options)
-            : base(options)
+        public ModelContext() : this("")
         {
-
         }
 
-        public static ModelContext Intance
+        public ModelContext(string connectionString)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    lock (_lock)
-                    {
-                        if (_instance == null)
-                        {
-                            var optionsBuilder = new DbContextOptionsBuilder<ModelContext>();
-                            optionsBuilder.UseSqlServer(@"Server=DESKTOP-Q9UG9JQ;Database=Award;User Id=sa;Password=123;TrustServerCertificate=True");
-                            return new ModelContext(optionsBuilder.Options);
-                        }
-                    }
-                }
-                return _instance;
-            }
+            if (connectionString.IsNullOrEmpty())
+                connectionString = ConfigurationFileHelper.GetDefaultConnectionString();
+
+            ConnectionStringToUseOnConfigure = connectionString;
+            DbConnectionToUseOnConfigure = null;
         }
 
+        public ModelContext(DbConnection dbConnection)
+        {
+            DbConnectionToUseOnConfigure = dbConnection;
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            if (DbConnectionToUseOnConfigure != null)
+                optionsBuilder.UseSqlServer(DbConnectionToUseOnConfigure);
+            else
+                optionsBuilder.UseSqlServer(ConnectionStringToUseOnConfigure);
+        }
+
+        private string ConnectionStringToUseOnConfigure { get; set; }
+
+        private DbConnection? DbConnectionToUseOnConfigure { get; set; }
+
+        #region DbSet 
         public DbSet<User> User { get; set; }
-
         public DbSet<Award> Award { get; set; }
-
         public DbSet<Category> Category { get; set; }
-
         public DbSet<UserAward> UserAward { get; set; }
+        #endregion
     }
 }

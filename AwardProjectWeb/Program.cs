@@ -21,13 +21,6 @@ builder.Services.AddScoped<UserAwardService>();
 
 var app = builder.Build();
 
-//app.UseStaticFiles(new StaticFileOptions
-//{
-//    FileProvider = new PhysicalFileProvider(
-//        Path.Combine(builder.Environment.ContentRootPath, "node_modules")),
-//    RequestPath = "/vendor"
-//});
-
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(

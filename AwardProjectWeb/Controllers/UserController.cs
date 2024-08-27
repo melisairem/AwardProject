@@ -6,7 +6,7 @@ namespace AwardProjectWeb.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserService _userService;
+        private UserService _userService;
 
         public UserController(UserService userService)
         {

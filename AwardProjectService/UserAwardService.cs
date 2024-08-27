@@ -1,5 +1,5 @@
-﻿using AwardProjectDal;
-using AwardProjectEntity;
+﻿using AwardProjectEntity;
+using Dal;
 
 namespace AwardProjectService 
 {
