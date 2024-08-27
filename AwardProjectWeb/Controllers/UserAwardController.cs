@@ -3,7 +3,7 @@ using AwardProjectEntity.Base;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace AwardWeb.Controllers
+namespace AwardProjectWeb.Controllers
 {
     public class UserAwardController : Controller
     {

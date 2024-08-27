@@ -1,6 +1,7 @@
-using System.Configuration;
 using AwardProjectEntity.Base;
+using AwardProjectService;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,21 +10,30 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ModelContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<AwardService>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<UserAwardService>();
 
 var app = builder.Build();
 
-//node_modules i vendor olarak yayýnladým
-app.UseStaticFiles(); // Varsayýlan wwwroot için
+//app.UseStaticFiles(new StaticFileOptions
+//{
+//    FileProvider = new PhysicalFileProvider(
+//        Path.Combine(builder.Environment.ContentRootPath, "node_modules")),
+//    RequestPath = "/vendor"
+//});
 
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(builder.Environment.ContentRootPath, "node_modules")),
+        Path.Combine(Directory.GetCurrentDirectory(), "node_modules")),
     RequestPath = "/vendor"
 });
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

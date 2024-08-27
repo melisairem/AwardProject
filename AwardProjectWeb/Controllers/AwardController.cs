@@ -2,7 +2,7 @@
 using AwardProjectEntity.Base;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AwardProject.Controllers
+namespace AwardProjectWeb.Controllers
 {
     public class AwardController : Controller
     {

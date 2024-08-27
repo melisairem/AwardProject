@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using AwardProjectEntity.Base;
+﻿using AwardProjectEntity.Base;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AwardProjectWeb.Controllers;
 
 public class HomeController : Controller
 {
@@ -17,5 +18,3 @@ public class HomeController : Controller
     }
 
 }
-
-

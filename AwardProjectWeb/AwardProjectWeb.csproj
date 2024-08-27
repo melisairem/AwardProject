@@ -4,14 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net7.0\AwardProject.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\net7.0\AwardProject.GlobalUsings.g.cs" />
-    <Compile Include="obj\Debug\net7.0\AwardProject.RazorAssemblyInfo.cs" />
-  </ItemGroup>
+  </PropertyGroup> 
 
   <ItemGroup>
     <Content Include="bin\Debug\net7.0\appsettings.Development.json" />
@@ -3312,6 +3305,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AwardProjectEntity\AwardProjectEntity.csproj" />
+    <ProjectReference Include="..\AwardProjectService\AwardProjectService.csproj" />
+    <ProjectReference Include="..\Utility\Utility.csproj" />
   </ItemGroup>
 
 </Project>

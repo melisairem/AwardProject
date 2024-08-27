@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AwardProject.Controllers
+namespace AwardProjectWeb.Controllers
 {
     public class LoginController : Controller
     {
