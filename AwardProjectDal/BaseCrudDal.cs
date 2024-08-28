@@ -24,6 +24,7 @@ namespace Dal
             return GetAll(null, includes);
         }
 
+        //işi yapan metot
         public virtual IEnumerable<TEntity> GetAll(List<Expression<Func<TEntity, bool>>>? predicates, List<string>? includes)
         {
             IEnumerable<TEntity> entities;

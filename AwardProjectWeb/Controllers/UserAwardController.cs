@@ -1,33 +1,39 @@
 ﻿using AwardProjectEntity;
-using AwardProjectEntity.Base;
+using AwardProjectService;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AwardProjectWeb.Controllers
 {
     public class UserAwardController : Controller
     {
-        private readonly ModelContext _context;
-
-        public UserAwardController(ModelContext context)
+        private readonly UserAwardService _userAwardService;
+        private UserService _userService;
+        private readonly AwardService _awardService;
+        
+        public UserAwardController(UserAwardService userAwardService, UserService userService, AwardService awardService)
         {
-            _context = context;
+            _userAwardService = userAwardService;
+            _userService = userService;
+            _awardService = awardService;
         }
 
         public IActionResult List()
         {
-            List<UserAward> userAwards = _context.UserAward
-                .Include(ua => ua.User)
-                .Include(ua => ua.Award)
-                .ToList();
+            List<UserAward> userAwards = _userAwardService.GetAll(new List<string>
+            {
+                nameof(UserAward.User),
+                nameof(UserAward.Award)
+
+            }).ToList();
+            
             return View(userAwards);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            List<User> users = _context.User.ToList();
-            List<Award> awards = _context.Award.ToList();
+            List<User> users = _userService.GetAll().ToList();
+            List<Award> awards = _awardService.GetAll().ToList();
 
             ViewBag.Users = users;
             ViewBag.Awards = awards;
@@ -38,16 +44,15 @@ namespace AwardProjectWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(UserAward userAward)
         {
-            _context.UserAward.Add(userAward);
-            _context.SaveChanges();
+            _userAwardService.Add(userAward);
             return RedirectToAction("List");
         }
 
         public IActionResult Edit(int id)
         {
-            UserAward userAward = _context.UserAward.Find(id)!;
-            List<User> users = _context.User.ToList();
-            List<Award> awards = _context.Award.ToList();
+            UserAward userAward = _userAwardService.GetById(id);
+            List<User> users = _userService.GetAll().ToList();
+            List<Award> awards = _awardService.GetAll().ToList();
 
             ViewBag.Users = users;
             ViewBag.Awards = awards;
@@ -58,20 +63,13 @@ namespace AwardProjectWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(UserAward userAward)
         {
-            userAward.UpdateDate = DateTime.Now;
-            _context.UserAward.Update(userAward);
-            _context.SaveChanges();
+            _userAwardService.Update(userAward);
             return RedirectToAction("List");
         }
 
         public IActionResult Delete(int id)
         {
-            UserAward? userAward = _context.UserAward.Find(id);
-            if (userAward != null)
-            {
-                _context.UserAward.Remove(userAward);
-                _context.SaveChanges();
-            }
+            _userAwardService.Delete(id);
             return RedirectToAction("List");
         }
     }

@@ -3,7 +3,7 @@ using Dal;
 
 namespace AwardProjectService
 {
-    public class CategoryService : BaseCrudDal<User>
+    public class CategoryService : BaseCrudDal<Category>
     {
     }
 }

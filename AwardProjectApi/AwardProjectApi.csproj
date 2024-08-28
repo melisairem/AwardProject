@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AwardProjectEntity\AwardProjectEntity.csproj" />
+    <ProjectReference Include="..\AwardProjectService\AwardProjectService.csproj" />
     <ProjectReference Include="..\Utility\Utility.csproj" />
   </ItemGroup>
 
