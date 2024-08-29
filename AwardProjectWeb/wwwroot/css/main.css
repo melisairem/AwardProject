@@ -12,13 +12,17 @@
     border: 3px solid rgba(0,0,0,0.2);
     border-radius: 50%;
     margin: auto;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: transparent;
 }
 
     .icon-circle- i {
-        font-size: 20px;
+        font-size: 22px; /* İkonun boyutunu çerçeveye uygun hale getirdim */
+        line-height: 1; /* İkonun yüksekliğini kontrol altına almak için */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 .icon-circle {

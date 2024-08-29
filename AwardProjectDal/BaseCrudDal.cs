@@ -1,8 +1,8 @@
-﻿using AwardProjectEntity.Base;
+﻿using System.Linq.Expressions;
+using AwardProjectDal;
+using AwardProjectEntity.Base;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using AwardProjectDal;
 using Utility.ConfigurationFile;
 
 namespace Dal
@@ -24,7 +24,6 @@ namespace Dal
             return GetAll(null, includes);
         }
 
-        //işi yapan metot
         public virtual IEnumerable<TEntity> GetAll(List<Expression<Func<TEntity, bool>>>? predicates, List<string>? includes)
         {
             IEnumerable<TEntity> entities;
@@ -168,7 +167,3 @@ namespace Dal
         }
     }
 }
-/*
-buraya geliş amacımız:
-context nesnesini sürekli olarak dependence injection yaparak buraya gönder istemememizdir.
-*/

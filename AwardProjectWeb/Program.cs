@@ -27,6 +27,9 @@ app.UseStaticFiles(new StaticFileOptions
     RequestPath = "/vendor"
 });
 
+app.UseStaticFiles();
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
