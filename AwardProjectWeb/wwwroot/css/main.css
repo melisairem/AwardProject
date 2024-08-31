@@ -31,11 +31,29 @@
     align-items: center;
     border: 3px solid rgba(0,0,0,0.2);
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    margin: auto;
+    width: 40px;
+    height: 40px;
     background-color: transparent;
+    flex-direction: column; /* İkon ve adı dikey olarak hizalamak için */
 }
 
     .icon-circle i {
-        font-size: 20px;
+        font-size: 22px; /* İkonun boyutunu çerçeveye uygun hale getirdim */
+        line-height: 1; /* İkonun yüksekliğini kontrol altına almak için */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+.icon-circle-name {
+    display: flex;
+    justify-content: center; /* İkon adını ortalamak için */
+    align-items: center; /* İkon adını ortalamak için */
+    margin-top: 5px; /* İkon ile ikon adı arasında biraz boşluk */
+    font-size: 14px; /* İkon adının boyutunu ayarlamak için */
+    text-align: center; /* Metni ortalamak için */
+    width: 100%; /* Genişliği %100 yaparak ortalamayı tam yapmak için */
+}
+
+   

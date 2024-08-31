@@ -32,6 +32,3 @@ namespace Utility.ConfigurationFile
         }
     }
 }
-//mail ayarları
-//varsa connectionstring
-//varsa api bağlantısı
