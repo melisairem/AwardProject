@@ -16,7 +16,7 @@ namespace AwardProjectEntity
         [Display(Name = "Çerçevenin Rengi")]
         public string BorderColor { get; set; }
 
-        [Display(Name = "Yazı Rengi")]
+        [Display(Name = "İkon Rengi")]
         public string FontColor { get; set; }
 
         [Display(Name = "İkon Sınıfı")]

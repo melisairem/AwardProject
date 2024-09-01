@@ -93,7 +93,7 @@ namespace Dal
 
                             entity.AddDate = DateTime.Now;
                             context.Set<TEntity>().Add(entity);
-                            context.SaveChanges();
+                            context.SaveChanges(); //BURADA PATLIYOR AMA KULLANICI EKLİYOR
                         }
 
                         sqlTran.Commit();

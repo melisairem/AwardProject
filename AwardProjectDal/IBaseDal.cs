@@ -22,5 +22,4 @@ namespace AwardProjectDal
 
         public void Delete(int id);
     }
-
 }
