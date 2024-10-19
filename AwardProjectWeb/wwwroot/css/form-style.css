@@ -28,9 +28,9 @@ form {
         font-size: 1rem;
         padding: 10px;
         border-radius: 5px;
-        background-color: #ecf0f1; /* burasý kutuucklarýn içinin rengini getiriyor */
+        background-color: #ecf0f1;
         border: 1px solid #ced4da;
-        color: #4a6373; /* Yazý rengini biraz daha açýk hale getirdik */
+        color: #4a6373;
         transition: border-color 0.3s ease-in-out;
         width: 100%;
     }
@@ -39,42 +39,42 @@ form {
             border-color: #3498db;
             outline: none;
             box-shadow: none;
-            color: #3a4d5c; /* Focus durumunda yazý rengini biraz daha koyu hale getirdik */
+            color: #3a4d5c;
         }
 
-    /* Select Kutularý için Genel Stil */ 
+    /* Select Kutularý için Genel Stil */
     .form-group .form-select {
         height: 45px;
         font-size: 1rem;
         padding: 10px;
         border-radius: 5px;
-        background-color: #ecf0f1; /* Kutucuklarýn arka plan rengini ayarlar */
+        background-color: #ecf0f1;
         border: 1px solid #ced4da;
-        color: #4a6373; /* Yazý rengini ayarlar */
+        color: #4a6373;
         transition: border-color 0.3s ease-in-out;
-        width: 100%; /* Geniþlik ayarý */
+        width: 100%;
     }
 
         .form-group .form-select:focus {
-            border-color: #3498db; /* Fokus durumunda çerçeve rengi */
+            border-color: #3498db;
             outline: none;
             box-shadow: none;
-            color: #3a4d5c; /* Focus durumunda yazý rengini biraz daha koyu hale getirir */
+            color: #3a4d5c;
         }
 
-    
-    /* Validation Messages */
-    .text-danger {
-        font-size: 0.9rem;
-        margin-top: 5px;
-        color: #e74c3c;
-    }
+
+/* Validation Messages */
+.text-danger {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #e74c3c;
+}
 
 /* Form Buttons Container */
 .form-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Buttonlar arasýndaki boþluk */
+    gap: 15px;
 }
 
 /* Buttons */
@@ -83,7 +83,7 @@ button.btn, a.btn {
     font-size: 1rem;
     border-radius: 5px;
     font-weight: 600;
-    min-width: 120px; /* Butonlarýn minimum geniþliði */
+    min-width: 120px;
 }
 
 /* Geri Dön Button */
@@ -94,19 +94,19 @@ button.btn-secondary, a.btn-secondary {
 }
 
     button.btn-secondary:hover, a.btn-secondary:hover {
-        background-color: #4a4949; /* Ana renkten biraz daha açýk */
+        background-color: #4a4949;
         border-color: #4a4949;
     }
 
 /* Kaydet (Güncelle) Button */
 button.btn-primary {
-    background-color: #0081a7; /* Güncelle butonunu yeþil yap */
+    background-color: #0081a7;
     border-color: #0081a7;
     color: #fff;
 }
 
     button.btn-primary:hover {
-        background-color: #3691cc; /* Ana renkten biraz daha koyu */
+        background-color: #3691cc;
         border-color: #3691cc;
         color: #fff;
     }

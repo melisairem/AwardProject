@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{E4D7C6DE-2AD7-4632-B2F6-8EB4E9B383E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwardProjectDal", "AwardProjectDal\AwardProjectDal.csproj", "{8C8E11B5-DC79-48CA-B021-A0F333AEC93C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwardProjectDal", "AwardProjectDal\AwardProjectDal.csproj", "{8C8E11B5-DC79-48CA-B021-A0F333AEC93C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLayer", "ServiceLayer", "{99791401-6076-4579-BB6F-6F0E392F02D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwardProjectService", "AwardProjectService\AwardProjectService.csproj", "{64D24737-9AC2-4393-9DC3-2B1D7BA1CF4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwardProjectService", "AwardProjectService\AwardProjectService.csproj", "{64D24737-9AC2-4393-9DC3-2B1D7BA1CF4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
