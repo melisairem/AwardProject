@@ -1,14 +1,10 @@
 ﻿@using Utility.TypeCheck
-@using Utility.TypeConverter
+@using Utility.TypeConverter    
 
 @{
     ViewData["Title"] = "Giriş Yap";
 
-
-
     Layout = "_EmptyLayout";
-
-
 
     string errorMessage = ViewData["ErrorMessage"].ToSafeString() ?? "";
 }
@@ -16,14 +12,11 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background-image: url('~/images/background.jpg'); background-size: cover;">
     <div class="row shadow-lg bg-white" style="border-radius: 10px; max-width: 900px; width: 100%; padding: 0;">
 
-        <!-- Logo Bölmesi -->
-        <div class="col-md-6 d-flex justify-content-center align-items-center p-5" style="background-color: #f7f7f7;">
-            <img src="C:\Users\melis\OneDrive\Masaüstü\indir.png" alt="Logo" style="max-width: 100%; height: auto;">
-
+        <div class="col-md-6 d-flex justify-content-center align-items-center p-5" style="background-color: #fff;">
+            <img src="@ViewData["LogoPath"]" alt="Logo" style="max-width: 100%; height: auto;">
         </div>
 
-        <!-- Giriş Formu Bölmesi -->
-        <div class="col-md-6 p-5">
+        <div class="col-md-6 p-5" style="border-left: 1px solid #ddd;">
             <h3 class="text-center mb-5" style="font-weight: bold;">Giriş Yap</h3>
 
             @if (!errorMessage.IsNullOrEmpty())
@@ -40,18 +33,26 @@
                     <i class="fa-solid fa-envelope me-1"></i>
                     <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" required>
                 </div>
+
                 <div class="mb-3 d-flex ps-3 d-flex align-items-center pe-2">
                     <i class="fa-solid fa-lock me-1"></i>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Şifre" required>
-                    <button type="button" class="btn"><i class="fa-solid fa-eye"></i></button>
+                    <button type="button" class="btn" id="togglePassword" style="border: none; background: none;">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
                 </div>
+
                 <div class="my-3 ps-4 form-check">
                     <input type="checkbox" class="form-check-input" id="remember" name="remember">
                     <label class="form-check-label" for="remember">Beni Hatırla</label>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
-            </form>
 
+                <div class="d-flex justify-content-between mt-3">
+                    <a href="@Url.Action("Register", "Account")" class="btn register-btn">Kayıt Ol</a>
+                    <a href="@Url.Action("ForgotPassword", "Account")" class="forgot-password-link">Şifremi Unuttum</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -62,26 +63,54 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Tüm mb-3 sınıfına sahip divleri seç
         const formGroups = document.querySelectorAll('.mb-3');
 
-        formGroups.forEach(function (div) {
-            // İçindeki input elemanına odaklanıldığında div'e stil ekle
+            formGroups.forEach(function (div) {
             const input = div.querySelector('.form-control');
 
             if (input) {
+                    // Input'a focus olduğunda mavi stil ekle
                 input.addEventListener('focus', function () {
-                    div.style.border = '1px solid #034f84';
+                    div.style.border = '1px solid #017bb6';
                     div.style.borderRadius = '10px';
-                    div.style.borderLeft = '7px solid #034f84';
-                });
+                    div.style.borderLeft = '7px solid #017bb6'; 
+                    });
 
-                // Blur (odak dışı) olduğunda div'in stilini kaldır
+                    // Blur (odaktan çıktığında) yeşil stili geri getir
                 input.addEventListener('blur', function () {
-                    div.style.border = '1px solid rgba(0, 0, 0, 0.2)';
+                    div.style.border = '1px solid rgba(0, 0, 0, 0.2)'; 
                     div.style.borderRadius = '10px';
-                });
-            }
+                    });
+
+                // Hover (üzerine gelindiğinde) yeşil stili uygula
+                div.addEventListener('mouseenter', function () {
+                    if (document.activeElement !== input) { 
+                            div.style.border = '1px solid #4CAF50'; 
+                            div.style.borderLeft = '7px solid #4CAF50'; 
+                        }
+                    });
+
+                    // Mouse ayrıldığında stil geri dönmeli
+                    div.addEventListener('mouseleave', function () {
+                        if (document.activeElement !== input) { 
+                            div.style.border = '1px solid rgba(0, 0, 0, 0.2)';
+                        }
+                    });
+                }
+            });
+
+            // Şifre göster/gizle fonksiyonu
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', function () {
+                // Şifre gizliyse göster, değilse gizle
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                // Göz ikonunu değiştir (fa-eye ve fa-eye-slash arasında geçiş yap)
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
         });
-    });
 </script>

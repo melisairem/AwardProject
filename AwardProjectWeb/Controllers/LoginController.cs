@@ -10,14 +10,27 @@ namespace AwardProjectWeb.Controllers
     {
 
         private UserService _userService;
+        private ImageService _imageService;
 
-        public LoginController(UserService userService)
+        public LoginController(UserService userService, ImageService imageService)
         {
             _userService = userService;
+            _imageService = imageService;
         }
 
         public IActionResult Index()
         {
+            // Veritabanından logo bilgisini çek
+            var logo = _imageService.GetAll().FirstOrDefault(); // İlk logoyu çekiyoruz
+            if (logo != null)
+            {
+                ViewData["LogoPath"] = logo.Path; // Logonun yolunu ViewData'ya ekliyoruz
+            }
+            else
+            {
+                ViewData["LogoPath"] = "/images/default-logo.png"; // Varsayılan bir logo belirledik
+            }
+
             return View();
         }
 
@@ -55,6 +68,18 @@ namespace AwardProjectWeb.Controllers
             }
 
             ViewData["ErrorMessage"] = errorMessage;
+
+            // Logoyu tekrar ViewData'ya ekle
+            var logo = _imageService.GetAll().FirstOrDefault();
+            if (logo != null)
+            {
+                ViewData["LogoPath"] = logo.Path;
+            }
+            else
+            {
+                ViewData["LogoPath"] = "/images/default-logo.png";
+            }
+
             return View();
         }
     }

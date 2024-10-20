@@ -43,6 +43,8 @@ namespace AwardProjectEntity.Base
         public DbSet<Award> Award { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<UserAward> UserAward { get; set; }
+
+        public DbSet<Image> Image { get; set; }
         #endregion
     }
 }

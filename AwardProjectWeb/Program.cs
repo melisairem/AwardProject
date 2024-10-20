@@ -17,6 +17,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<AwardService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<UserAwardService>();
+builder.Services.AddScoped<ImageService>();
 
 var app = builder.Build();
 
