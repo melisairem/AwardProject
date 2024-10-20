@@ -1,41 +1,87 @@
-﻿﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@using Utility.TypeCheck
+﻿@using Utility.TypeCheck
 @using Utility.TypeConverter
 
 @{
-    ViewData["Title"] = "Giriş Ekranı";
+    ViewData["Title"] = "Giriş Yap";
+
+
 
     Layout = "_EmptyLayout";
 
-    string errorMessage = ViewData["ErrorMessage"].ToSafeString();
+
+
+    string errorMessage = ViewData["ErrorMessage"].ToSafeString() ?? "";
 }
 
-<div class="container">
-    <main role="main" class="pb-3 px-5">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; background-image: url('~/images/background.jpg'); background-size: cover;">
+    <div class="row shadow-lg bg-white" style="border-radius: 10px; max-width: 900px; width: 100%; padding: 0;">
 
-        @if (!errorMessage.IsNullOrEmpty())
+        <!-- Logo Bölmesi -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center p-5" style="background-color: #f7f7f7;">
+            <img src="C:\Users\melis\OneDrive\Masaüstü\indir.png" alt="Logo" style="max-width: 100%; height: auto;">
 
-        {
-            <div class="alert alert-danger">
-                @errorMessage
-            </div>
-        }
+        </div>
 
-        <form asp-controller="Login" asp-action="Index" method="post">
-            @Html.AntiForgeryToken()
+        <!-- Giriş Formu Bölmesi -->
+        <div class="col-md-6 p-5">
+            <h3 class="text-center mb-5" style="font-weight: bold;">Giriş Yap</h3>
 
-            <div class="form-group">
-                <input type="text" id="Email" name="Email" class="form-control" placeholder="E-mail" />
-            </div>
-            <div class="form-group">
-                <input type="password" id="Password" name="Password" placeholder="Şifre" class="form-control" />
-            </div>
-            <button type="submit" class="btn btn-primary">Giriş Yap</button>
-        </form>
-    </main>
+            @if (!errorMessage.IsNullOrEmpty())
+            {
+                <div class="alert alert-danger">
+                    @errorMessage
+                </div>
+            }
+
+            <form asp-controller="Login" asp-action="Index" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3 d-flex ps-3 d-flex align-items-center pe-2">
+                    <i class="fa-solid fa-envelope me-1"></i>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" required>
+                </div>
+                <div class="mb-3 d-flex ps-3 d-flex align-items-center pe-2">
+                    <i class="fa-solid fa-lock me-1"></i>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Şifre" required>
+                    <button type="button" class="btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div class="my-3 ps-4 form-check">
+                    <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">Beni Hatırla</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+            </form>
+
+        </div>
+    </div>
 </div>
 
 @section styles {
-    <link rel="stylesheet" href="~/css/form-style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login-style.css" asp-append-version="true" />
 }
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Tüm mb-3 sınıfına sahip divleri seç
+        const formGroups = document.querySelectorAll('.mb-3');
+
+        formGroups.forEach(function (div) {
+            // İçindeki input elemanına odaklanıldığında div'e stil ekle
+            const input = div.querySelector('.form-control');
+
+            if (input) {
+                input.addEventListener('focus', function () {
+                    div.style.border = '1px solid #034f84';
+                    div.style.borderRadius = '10px';
+                    div.style.borderLeft = '7px solid #034f84';
+                });
+
+                // Blur (odak dışı) olduğunda div'in stilini kaldır
+                input.addEventListener('blur', function () {
+                    div.style.border = '1px solid rgba(0, 0, 0, 0.2)';
+                    div.style.borderRadius = '10px';
+                });
+            }
+        });
+    });
+</script>

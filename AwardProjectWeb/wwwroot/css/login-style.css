@@ -1,0 +1,33 @@
+<style >
+
+form i {
+    font-size: 1.3rem;
+}
+
+form .mb-3 {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+    form .mb-3:hover {
+        border: 1px solid #4caf50;
+        border-radius: 10px;
+        border-left: 7px solid #4caf50;
+    }
+
+.form-control {
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    letter-spacing: 0.1rem;
+}
+
+    .form-control:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+   
+</style >
