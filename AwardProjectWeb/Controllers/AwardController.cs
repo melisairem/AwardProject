@@ -1,9 +1,11 @@
 ﻿using AwardProjectEntity;
 using AwardProjectService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AwardProjectWeb.Controllers
 {
+    [Authorize]
     public class AwardController : Controller
     {
         private readonly AwardService _awardService;

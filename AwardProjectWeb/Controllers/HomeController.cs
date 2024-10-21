@@ -1,35 +1,26 @@
 ﻿using System.Linq.Expressions;
 using AwardProjectEntity;
 using AwardProjectService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Utility.Security;
 
-namespace AwardProjectWeb.Controllers;
-
-public class HomeController : Controller
+namespace AwardProjectWeb.Controllers
 {
-    private UserService _userService;
-
-    public HomeController(UserService userService)
+    [Authorize]
+    public class HomeController : Controller
     {
-        _userService = userService;
-    }
+        private UserService _userService;
 
-    public IActionResult Index()
-    {
-        string email = "melisa@gmail.com";
-        string password = "321";
-
-        User user = _userService.GetAll(predicates: new List<Expression<Func<User, bool>>>
+        public HomeController(UserService userService)
         {
-            i => i.Email == email
-        }).FirstOrDefault();
-
-        if (user != null)
-        {
-            bool isCorrectPassword = PasswordHash.Verify(user.Password, password);
+            _userService = userService;
         }
-        
-        return View();
+
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
+

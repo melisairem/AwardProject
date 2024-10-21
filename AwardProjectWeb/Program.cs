@@ -1,12 +1,25 @@
 using AwardProjectEntity.Base;
 using AwardProjectService;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using Utility.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Name = "AwardProjectAuthCookie";
+        options.LoginPath = "/Login/Index";
+        options.LogoutPath = "/Login/Index";
+        options.AccessDeniedPath = "/Login/Index";
+    });
 
 builder.Services.AddDbContext<ModelContext>(options =>
 {
@@ -44,11 +57,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 //açýlýþ sayfasýný belirliyorsun.
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");
+
+HttpContextHelper.Configure(app.Services.GetRequiredService<IHttpContextAccessor>());
 
 app.Run();

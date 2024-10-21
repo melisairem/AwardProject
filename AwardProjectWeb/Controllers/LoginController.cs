@@ -2,6 +2,8 @@
 using AwardProjectService;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
+using Utility.Auth;
+using Utility.Model.Auth;
 using Utility.Security;
 
 namespace AwardProjectWeb.Controllers
@@ -41,7 +43,7 @@ namespace AwardProjectWeb.Controllers
             string email = collection["Email"];
             string password = collection["Password"];
 
-            //string hashedPasssword = PasswordHash.Hash(password);  hashlenmemiş şifreleri hash li kaydetmek içindi
+            //string hashedPasssword = PasswordHash.Hash(password);  //hashlenmemiş şifreleri hash li kaydetmek içindi
 
             User? user = _userService.GetAll(predicates: new List<Expression<Func<User, bool>>>
             {
@@ -55,6 +57,8 @@ namespace AwardProjectWeb.Controllers
 
                 if (isCorrect)
                 {
+                    AuthenticationModel authenticationModel = new AuthenticationModel(user.Id, user.Email, user.Name, user.Surname, user.UserRole);
+                    AuthenticationHelper.SignIn(authenticationModel);
                     return RedirectToAction("Index",controllerName: "Home");
                 }
                 else
