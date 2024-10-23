@@ -22,15 +22,14 @@ namespace AwardProjectWeb.Controllers
 
         public IActionResult Index()
         {
-            // Veritabanından logo bilgisini çek
-            var logo = _imageService.GetAll().FirstOrDefault(); // İlk logoyu çekiyoruz
+            var logo = _imageService.GetAll().FirstOrDefault();
             if (logo != null)
             {
-                ViewData["LogoPath"] = logo.Path; // Logonun yolunu ViewData'ya ekliyoruz
+                ViewData["LogoPath"] = logo.Path; 
             }
             else
             {
-                ViewData["LogoPath"] = "/images/default-logo.png"; // Varsayılan bir logo belirledik
+                ViewData["LogoPath"] = "/images/default-logo.png";
             }
 
             return View();
@@ -73,7 +72,7 @@ namespace AwardProjectWeb.Controllers
 
             ViewData["ErrorMessage"] = errorMessage;
 
-            // Logoyu tekrar ViewData'ya ekle
+            
             var logo = _imageService.GetAll().FirstOrDefault();
             if (logo != null)
             {

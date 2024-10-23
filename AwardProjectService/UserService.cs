@@ -14,13 +14,13 @@ namespace AwardProjectService
                user => user.Email == entity.Email
             }).FirstOrDefault();
 
-            if (user == null)
+            if (user != null)
             {
-                //TODOhata mesajı gelecek.
-                return;
+                throw new Exception("Bu e-posta ile kayıtlı bir kullanıcı zaten mevcut.");
             }
 
             entity.Password = PasswordHash.Hash(entity.Password);
+
             base.Add(entity);
         }
 
