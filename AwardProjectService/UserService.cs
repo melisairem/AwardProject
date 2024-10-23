@@ -9,12 +9,12 @@ namespace AwardProjectService
     {
         public override void Add(User entity)
         {
-            User? user = GetAll(predicates: new List<Expression<Func<User, bool>>>
+            User? otherUser = GetAll(predicates: new List<Expression<Func<User, bool>>>
             {
                user => user.Email == entity.Email
             }).FirstOrDefault();
 
-            if (user != null)
+            if (otherUser != null)
             {
                 throw new Exception("Bu e-posta ile kayıtlı bir kullanıcı zaten mevcut.");
             }
