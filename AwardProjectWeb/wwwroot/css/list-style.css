@@ -6,7 +6,7 @@ h2 {
     color: #333; /* Nötr bir metin rengi */
     text-align: left;
     /*background: linear-gradient(90deg, #89CFF0, #5390D9);*/ /* Yumuþak pastel mavi tonlarý */
-    background: linear-gradient(90deg, #adb5bd, #495057); /* Yumuþak pastel mavi tonlarý */
+    background: linear-gradient(135deg, #adb5bd, #495057); /* Yumuþak pastel mavi tonlarý */
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;

@@ -85,5 +85,14 @@ namespace AwardProjectWeb.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            AuthenticationHelper.SignOut();
+
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

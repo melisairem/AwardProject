@@ -34,18 +34,23 @@ form .mb-3 {
 
 /* Giriþ Yap Butonu */
 .btn-primary {
-    background-color: #017bb6; 
-    border-color: #017bb6; 
-    color: white; 
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    background-color: #017bb6;
+    border-color: #017bb6;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Transform için geçiþ ekledik */
 }
 
     /* Giriþ Yap Butonuna Üzerine Gelindiðinde */
     .btn-primary:hover {
-        background-color: #4caf50; 
-        border-color: #4caf50; 
-        color: white; 
+        background-color: #4caf50;
+        border-color: #4caf50;
+        color: white;
+        transform: scale(1.05); /* Butonu hafifçe büyüterek animasyon etkisi oluþtur */
     }
+
 
 /* Kayýt Ol Butonu için stil */
 .register-btn {
