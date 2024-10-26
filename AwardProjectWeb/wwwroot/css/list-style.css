@@ -1,33 +1,19 @@
-/* Yeni Ekle Butonu Konteyneri */
-.button-container {
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-/* Yeni Ekle Butonu */
-.btn-primary {
-    padding: 10px 40px;
-    font-size: 1rem;
-    /*background-color: #03346E; */ /* lacivert  */
-    /*background-color: #344e41;*/ /* koyu yeþil  */
-    background-color: #0077B6;
-    border-color: #0077B6;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
+/* Modern ve Yumuþak Baþlýk Stili */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-weight: 400;
+    color: #333; /* Nötr bir metin rengi */
+    text-align: left;
+    /*background: linear-gradient(90deg, #89CFF0, #5390D9);*/ /* Yumuþak pastel mavi tonlarý */
+    background: linear-gradient(90deg, #adb5bd, #495057); /* Yumuþak pastel mavi tonlarý */
     display: inline-block;
-    color: #fff; /* Yazý rengi beyaz */
-}
-
-    .btn-primary:hover {
-        background-color: #005f8a; /* Daha koyu bir mavi */
-    }
-}
-
-.btn-success:hover {
-    background-color: #3691cc; /* Ana renkten biraz daha koyu */
-    border-color: #3691cc;
-    color: #fff; /* Yazý rengi beyaz */
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.60); /* Hafif gölge */
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 /* Tablo */
@@ -43,15 +29,11 @@
     /* Tablo Baþlýðý */
     .table thead th {
         padding: 15px;
-        text-align: left;
+        text-align: center; /* Yatay ortalama */
         font-size: 1rem;
-        /*background-color: #312F2F;*/ /* Arka plan rengi burada belirleniyor */
-        /*background-color: #808080;*/
-        /*background-color: #003049;*/
-        background-color: #495057; /* gri */
-        /* background-color: #588157; */ /* yeþil  */
-        color: #ecf0f1; /* Yazý rengi */
-        margin-top: 10px
+        background-color: #495057;
+        color: #ecf0f1;
+        margin-top: 10px;
     }
 
     /* Tablo Gövdesi */
@@ -66,29 +48,48 @@
     .table tbody td {
         padding: 15px;
         font-size: 0.95rem;
+        text-align: center; /* Yatay ortalama */
+        vertical-align: middle; /* Dikey ortalama */
     }
 
+/* Yeni Ekle Butonu Konteyneri */
+.button-container {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/* Yeni Ekle Butonu */
+.btn-primary {
+    padding: 10px 40px;
+    font-size: 1rem;
+    color: #005f8a;
+    background-color: #fff;
+    border-color: #005f8a;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out;
+    display: inline-block;
+}
+
+    .btn-primary:hover {
+        background-color: #005f8a;
+        color: #fff;
+        border-color: #005f8a;
+    }
+
+
+/* Ýþlem Butonlarý */
 .action-buttons {
     display: flex;
-    justify-content: center; /* Butonlarý yatay olarak ortalar */
-    align-items: center; /* Butonlarý dikey olarak ortalar */
+    justify-content: center;
+    align-items: center;
 }
 
     .action-buttons a {
-        margin: 0 5px; /* Her bir buton arasýnda 5px boþluk býrakýr */
+        margin: 0 5px;
     }
 
-.melisa {
-    display: flex;
-    justify-content: center; /* Butonlarý yatay olarak ortalar */
-    align-items: center; /* Butonlarý dikey olarak ortalar */
-}
-
-    .melisa a {
-        margin: 0 5px; /* Her bir buton arasýnda 5px boþluk býrakýr */
-    }
-
-/* Ýþlem Butonlarý */
+/* Baþarý ve Tehlike Butonlarý */
 .btn-success {
     background-color: #33D197;
     border-color: #33D197;
@@ -101,9 +102,9 @@
 }
 
     .btn-success:hover {
-        background-color: #2fb586; /* Ana renkten biraz daha koyu */
+        background-color: #2fb586;
         border-color: #2fb586;
-        color: #fff; /* Yazý rengi beyaz */
+        color: #fff;
         margin-right: 50px;
     }
 
@@ -119,7 +120,18 @@
 }
 
     .btn-danger:hover {
-        background-color: #d3545b; /* Ana renkten biraz daha koyu */
+        background-color: #d3545b;
         border-color: #d3545b;
-        color: #fff; /* Yazý rengi beyaz */
+        color: #fff;
+    }
+
+/* Melisa sýnýfý (Ortalama için) */
+.melisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .melisa a {
+        margin: 0 5px;
     }

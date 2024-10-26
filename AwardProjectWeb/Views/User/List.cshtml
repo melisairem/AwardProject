@@ -10,13 +10,14 @@
 <div class="button-container">
     <a role="button" aria-disabled="true" class="btn btn-primary" href="@Url.Action("Add", "User")">Ekle</a>
 </div>
-<table class="table table-bordered">
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Ad</th>
             <th scope="col">Soyad</th>
             <th scope="col">E-posta</th>
+            <th scope="col">Kullanıcı Rolü</th>
             <th scope="col">İşlemler</th>
         </tr>
     </thead>
@@ -32,6 +33,7 @@
                     <td>@user.Name</td>
                     <td>@user.Surname</td>
                     <td>@user.Email</td>
+                    <td>@user.UserRole</td>
                     <td>
                         <div class="action-buttons">
                             <a class="btn btn btn-outline-success btn " href="@Url.Action("Edit", "User", new { id = user.Id })" role="button" aria-disabled="true">Güncelle

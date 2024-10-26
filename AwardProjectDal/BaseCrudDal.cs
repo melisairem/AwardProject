@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AwardProjectDal;
+using AwardProjectEntity;
 using AwardProjectEntity.Base;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -91,9 +92,15 @@ namespace Dal
                         {
                             context.Database.UseTransaction(sqlTran);
 
+                            //varsayılan olarak client rolü ekliyorum
+                            if (entity is User userEntity && userEntity.UserRole != "client")
+                            {
+                                userEntity.UserRole = "client";
+                            }
+
                             entity.AddDate = DateTime.Now;
                             context.Set<TEntity>().Add(entity);
-                            context.SaveChanges(); //BURADA PATLIYOR AMA KULLANICI EKLİYOR
+                            context.SaveChanges();   
                         }
 
                         sqlTran.Commit();
